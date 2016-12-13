@@ -1,0 +1,29 @@
+
+.containers{
+
+
+}
+.content{
+  padding: 0 40px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  min-height: 600px;
+}
+
+.page-link{
+  margin: 5px;
+  &-img{
+    width: 150px;
+    height: 200px;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color:#FFFFFF;
+  }
+  &-title{
+    margin-top: 3px;
+  }
+}

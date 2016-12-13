@@ -1,0 +1,37 @@
+.route--active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.header{
+  background-color: #0074FF;
+  min-height: 60px;
+  .containers{
+    padding: 0 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &-title{
+
+    color:#FFFFFF;
+  }
+  &-right{
+    display: flex;
+    align-items: center;
+    color:#FFFFFF;
+    width: 200px;
+    justify-content: space-between;
+    &-login{
+
+    }
+    &-trial{
+      width: 140px;
+      background-color: #000000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+    }
+  }
+
+}

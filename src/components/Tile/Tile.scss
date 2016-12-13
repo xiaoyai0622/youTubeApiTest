@@ -1,0 +1,22 @@
+
+.tile{
+  width: 150px;
+  margin: 5px;
+  &-img{
+    width: 150px;
+    height: 200px;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color:#FFFFFF;
+    &-show{
+      width: 150px;
+      height: 200px;
+    }
+  }
+  &-title{
+    margin-top: 3px;
+  }
+
+}
