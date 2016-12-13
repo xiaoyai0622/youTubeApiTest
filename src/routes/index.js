@@ -10,7 +10,7 @@ import SeriesRoute from './MyVideos'
 export const createRoutes = (store) => ({
   path        : '/',
   component   : CoreLayout,
-  indexRoute  : MoviesRoute,
+  indexRoute  : Home,
   childRoutes : [
     MoviesRoute(store),
     SeriesRoute(store)
