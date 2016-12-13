@@ -12,6 +12,10 @@ Qiuyuan Yin
 
 * `npm install babel-plugin-transform-runtime`
 
+* `npm start`
+
+* open url localhost:3000 at your browser
+
 * `npm run deploy`
 
 * copy the content out of the `dist` folder

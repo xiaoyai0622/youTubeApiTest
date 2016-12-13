@@ -7,15 +7,25 @@ import {DropDownMenu, MenuItem, Slider,Dialog}     from 'material-ui';
 import AutoCompleteSearch from '../../../components/AutoCompleteSearch'
 import getMuiTheme          from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider     from 'material-ui/styles/MuiThemeProvider';
+import moment from 'moment';
+
 class Movies extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {type: 'video', secondSlider: 100,open: false,searchDate:new Date(Date.now()).toISOString(),term:''};
+    this.state = {type: 'video', secondSlider: 0,open: false,searchDate:new Date(Date.now()).toISOString(),term:'',fliterDisplay:this.props.movies.movieList.items};
   }
 
   componentWillMount() {
     this.props.fetchMovie();
+  }
+  componentWillReceiveProps(nextProps){
+
+      this.setState(
+        {fliterDisplay:nextProps.movies.movieList.items}
+      )
+    
+
   }
 
   _onSearchResultsFound(result) {
@@ -38,14 +48,21 @@ class Movies extends React.Component {
     var d = new Date();
     d.setDate(d.getDate()-value);
 
-    console.log(d)
+
     var nextList = [];
     var currentList = this.props.movies.movieList.items
 
-    currentList.splice(0,value)
-    this.setState({searchDate: d,secondSlider:value});
 
-    //this.props.filterList(currentList)
+currentList.map(function (c) {
+  if(moment(c.snippet.publishedAt)<moment(d)){
+    nextList.push(c)
+  }
+
+})
+    this.setState({
+      fliterDisplay:nextList
+    })
+
   };
 
   saveMyVideo(movie){
@@ -65,7 +82,7 @@ class Movies extends React.Component {
 
   render() {
 
-    if (this.props.movies.movieList.items) {
+    if (this.state.fliterDisplay) {
       return (
         <div>
           <Title title="Youtube Videos"/>
@@ -93,9 +110,9 @@ class Movies extends React.Component {
               <Slider
                 className='slider'
                 min={0}
-                max={100}
-                step={1}
-                defaultValue={100}
+                max={1000}
+                step={10}
+                defaultValue={0}
                 value={this.state.secondSlider}
                 onChange={this.handleSecondSlider}
               />
@@ -103,7 +120,7 @@ class Movies extends React.Component {
           </div>
 
           <div className="movie-list">
-            {this.props.movies.movieList.items.map(function (movie) {
+            {this.state.fliterDisplay.map(function (movie) {
               return (
                 <Tile id={movie.id.videoId} title={movie.snippet.title} img={movie.snippet.thumbnails.medium.url} save={()=>this.saveMyVideo(movie)}/>)
             }.bind(this))}
