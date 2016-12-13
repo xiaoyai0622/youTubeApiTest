@@ -1,21 +1,22 @@
 
 .tile{
-  width: 150px;
+  width: 320px;
   margin: 5px;
   &-img{
-    width: 150px;
-    height: 200px;
+    width: 320px;
+    height: 180px;
     background-color: #000000;
     display: flex;
     justify-content: center;
     flex-direction: column;
     color:#FFFFFF;
     &-show{
-      width: 150px;
-      height: 200px;
+      width: 320px;
+      height: 180px;
     }
   }
   &-title{
+    min-height: 40px;
     margin-top: 3px;
   }
 

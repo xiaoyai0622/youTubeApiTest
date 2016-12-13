@@ -1,12 +1,12 @@
 import { connect } from 'react-redux'
-import { fetchMovie,fetchMovieByKeyWord } from '../modules/movies'
+import { fetchMovie,fetchMovieByKeyWord,saveVideo,filterList } from '../modules/movies'
 
 
 
 import Counter from '../components/Movies'
 
 const mapDispatchToProps = {
-  fetchMovie,fetchMovieByKeyWord
+  fetchMovie,fetchMovieByKeyWord,saveVideo,filterList
 }
 
 const mapStateToProps = (state) => ({

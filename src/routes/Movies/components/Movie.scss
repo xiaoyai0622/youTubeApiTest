@@ -1,5 +1,18 @@
 .movie-list{
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 0 40px;
+}
+
+
+.slider{
+  max-width: 300px;
+  width: 300px;
+}
+
+.filter-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }

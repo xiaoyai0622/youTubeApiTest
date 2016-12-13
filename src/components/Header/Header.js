@@ -5,18 +5,12 @@ import './Header.scss'
 export const Header = () => (
   <div className="header">
     <div className="containers">
-      <IndexLink to='/' activeClassName='route--active'>
-        <h1 className="header-title">DEMO Streaming</h1>
-      </IndexLink>
+      
+        <h1 className="header-title">Youtube API TEST</h1>
 
-      <div className="header-right">
-        <div className="header-right-login">
-          Log in
-        </div>
-        <div className="header-right-trial">
-          Start your free trial
-        </div>
-      </div>
+      <Link to="/movies"><h3 className="header-title sub">Search Videos</h3> </Link>
+
+      <Link to="/myvideo"><h3 className="header-title sub">My Videos</h3> </Link>
     </div>
   </div>
 )

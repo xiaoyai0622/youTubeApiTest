@@ -35,7 +35,7 @@ export function fetchSeries(){
     var final = _.dropRight(sorted,sorted.length-21)
     console.log(final);
     dispatch(fetchSeriesDone(final));
-
+    
   }
 }
 
